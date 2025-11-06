@@ -64,17 +64,3 @@ def scrape_ps_reviews(
 
     df = df.head(total_reviews)
     return df
-
-if __name__ == '__main__':
-    clash_royal_data = scrape_ps_reviews(
-        app_id = 'com.supercell.clashroyale',
-        total_reviews = 1000,
-        lang = 'en',
-        country = 'us',
-        delay_seconds = 10
-    )
-
-    if clash_royal_data is not None and not clash_royal_data.empty:
-        clash_royal_data.to_csv('clash_royal_data.csv', index=False)
-    else:
-        print("Error on Output!")
